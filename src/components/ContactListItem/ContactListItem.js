@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice'; // Перевірте, чи правильно вказано шлях до contactsSlice.js
-
-
+import { deleteContact } from '../../redux/contactsSlice'; // Якщо ви не використовуєте звідси щось інше, цей імпорт можна видалити
 
 export const ContactListItem = ({ id, name, number, index }) => {
   const dispatch = useDispatch();
@@ -13,12 +11,12 @@ export const ContactListItem = ({ id, name, number, index }) => {
   };
 
   return (
-    <ContactItemStyled>
+    <div>
       {index + 1}. {name}: {number}
-      <DeleteBtnStyled type="button" onClick={handleDelete}>
+      <button type="button" onClick={handleDelete}>
         Delete
-      </DeleteBtnStyled>
-    </ContactItemStyled>
+      </button>
+    </div>
   );
 };
 
